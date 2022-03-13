@@ -37,32 +37,37 @@ class HomePageState extends State<HomePage> {
           child: Padding(
             padding:
                 const EdgeInsets.symmetric(horizontal: 32.0, vertical: 12.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            child: ListView(
               children: [
+                const SizedBox(height: 20),
                 Row(
                   children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Good Afternoon",
-                          style:
-                              Theme.of(context).textTheme.titleLarge?.copyWith(
-                                    fontSize: 30,
-                                    fontWeight: FontWeight.w700,
-                                  ),
-                        ),
-                        Text(
-                          "Simrat",
-                          style:
-                              Theme.of(context).textTheme.titleLarge?.copyWith(
-                                    fontWeight: FontWeight.w700,
-                                  ),
-                        ),
-                      ],
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Good Afternoon",
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleLarge
+                                ?.copyWith(
+                                  fontSize: 30,
+                                  fontWeight: FontWeight.w700,
+                                ),
+                          ),
+                          Text(
+                            "Simrat",
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleLarge
+                                ?.copyWith(
+                                  fontWeight: FontWeight.w700,
+                                ),
+                          ),
+                        ],
+                      ),
                     ),
-                    const Spacer(),
                     CircleAvatar(
                       radius: 30,
                       backgroundColor: const Color(0xffBDDBEC),
@@ -74,6 +79,7 @@ class HomePageState extends State<HomePage> {
                     ),
                   ],
                 ),
+                const SizedBox(height: 40),
                 const SizedBox(
                   height: 20,
                 ),
@@ -121,6 +127,7 @@ class HomePageState extends State<HomePage> {
                     ),
                   ),
                 ),
+                const SizedBox(height: 20),
                 Material(
                   type: MaterialType.transparency,
                   child: Card(
@@ -180,6 +187,7 @@ class HomePageState extends State<HomePage> {
                     ),
                   ),
                 ),
+                const SizedBox(height: 20),
                 Material(
                   type: MaterialType.transparency,
                   child: Card(
