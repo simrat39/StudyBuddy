@@ -54,11 +54,13 @@ class HomePageState extends State<HomePage> {
                       ],
                     ),
                     const Spacer(),
-                    const CircleAvatar(
+                    CircleAvatar(
                       radius: 30,
-                      child: Icon(
-                        Icons.person,
-                        size: 40,
+                      backgroundColor: const Color(0xffBDDBEC),
+                      child: Image.asset(
+                        "assets/tomato_red.png",
+                        width: 36,
+                        height: 36,
                       ),
                     ),
                   ],
