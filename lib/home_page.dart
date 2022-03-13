@@ -168,28 +168,50 @@ class HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-              Card(
-                color: const Color(0xffFFE0C3),
-                child: Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 12.0,
-                    vertical: 16.0,
-                  ),
-                  child: Row(
-                    children: [
-                      Text(
-                        "Set a timer block",
-                        style: Theme.of(context)
-                            .textTheme
-                            .titleMedium
-                            ?.copyWith(fontSize: 22),
+              Material(
+                type: MaterialType.transparency,
+                child: Card(
+                  color: const Color(0xffFFE0C3),
+                  child: InkWell(
+                    onTap: () => {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (_) => TimeSelectPage(
+                            callback: (p) {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (context) => TimerPage(
+                                    timerStateChangeNotifier: p,
+                                  ),
+                                ),
+                              );
+                            },
+                          ),
+                        ),
+                      )
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 12.0,
+                        vertical: 16.0,
                       ),
-                      const Spacer(),
-                      const Icon(
-                        Icons.timer,
-                        size: 30,
+                      child: Row(
+                        children: [
+                          Text(
+                            "Set a timer block",
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleMedium
+                                ?.copyWith(fontSize: 22),
+                          ),
+                          const Spacer(),
+                          const Icon(
+                            Icons.timer,
+                            size: 30,
+                          ),
+                        ],
                       ),
-                    ],
+                    ),
                   ),
                 ),
               ),
