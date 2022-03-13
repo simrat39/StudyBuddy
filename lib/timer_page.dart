@@ -35,7 +35,7 @@ class TimerPageState extends State<TimerPage> {
                 color: const Color(0xffFFE0C3),
                 child: Container(
                   padding: const EdgeInsets.symmetric(
-                    horizontal: 12.0,
+                    horizontal: 14.0,
                     vertical: 16.0,
                   ),
                   child: Row(

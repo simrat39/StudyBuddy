@@ -7,19 +7,28 @@ class DoneButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(10),
-      decoration: BoxDecoration(
+    return Material(
+      type: MaterialType.transparency,
+      child: InkWell(
         borderRadius: BorderRadius.circular(100),
-        border: Border.all(
-          width: 2,
-          color: Colors.green,
+        onTap: () {
+          print("done");
+        },
+        child: Container(
+          padding: const EdgeInsets.all(10),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(100),
+            border: Border.all(
+              width: 2,
+              color: Colors.green,
+            ),
+          ),
+          child: const Icon(
+            Icons.check,
+            color: Colors.green,
+            size: 40,
+          ),
         ),
-      ),
-      child: const Icon(
-        Icons.check,
-        color: Colors.green,
-        size: 40,
       ),
     );
   }
