@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:study_app/invite_homies/invite_homies_page.dart';
+import 'package:study_app/pmd_select/pmd_select_page.dart';
 import 'package:study_app/time_select/time_select_page.dart';
 import 'package:study_app/timer_page.dart';
 
@@ -183,6 +184,7 @@ class HomePageState extends State<HomePage> {
                   child: Card(
                     color: const Color(0xffFFE0C3),
                     child: InkWell(
+                      borderRadius: BorderRadius.circular(14),
                       onTap: () => {
                         Navigator.of(context).push(
                           MaterialPageRoute(
@@ -226,29 +228,52 @@ class HomePageState extends State<HomePage> {
                     ),
                   ),
                 ),
-                Card(
-                  color: const Color(0xffFFD7D7),
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 12.0,
-                      vertical: 16.0,
-                    ),
-                    child: Row(
-                      children: [
-                        Text(
-                          "Start a pomodoro",
-                          style: Theme.of(context)
-                              .textTheme
-                              .titleMedium
-                              ?.copyWith(fontSize: 22),
+                Material(
+                  type: MaterialType.transparency,
+                  child: Card(
+                    color: const Color(0xffFFD7D7),
+                    child: InkWell(
+                      borderRadius: BorderRadius.circular(14),
+                      onTap: () => {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (_) => PmdSelectPage(
+                              callback: (p) {
+                                /* Navigator.of(context).push( */
+                                /*   MaterialPageRoute( */
+                                /*     builder: (context) => PmdSelectPage( */
+                                /*       timerStateChangeNotifier: p, */
+                                /*     ), */
+                                /*   ), */
+                                /* ); */
+                              },
+                            ),
+                          ),
+                        )
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 12.0,
+                          vertical: 16.0,
                         ),
-                        const Spacer(),
-                        Image.asset(
-                          "assets/tomato_black.png",
-                          height: 30,
-                          width: 30,
+                        child: Row(
+                          children: [
+                            Text(
+                              "Start a pomodoro",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleMedium
+                                  ?.copyWith(fontSize: 22),
+                            ),
+                            const Spacer(),
+                            Image.asset(
+                              "assets/tomato_black.png",
+                              height: 30,
+                              width: 30,
+                            ),
+                          ],
                         ),
-                      ],
+                      ),
                     ),
                   ),
                 ),
