@@ -15,7 +15,7 @@ class HomePage extends StatefulWidget {
 }
 
 class HomePageState extends State<HomePage> {
-  List<String> days = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"];
+  List<String> days = ["We", "Th", "Fr", "Sa", "Su"];
 
   static String dateTimetoHumanReadable(DateTime dt) {
     String dateSlug =
@@ -95,7 +95,7 @@ class HomePageState extends State<HomePage> {
                             style: Theme.of(context).textTheme.titleLarge,
                           ),
                           Text(
-                            "Your Study Streak: 7 Days",
+                            "Your Study Streak: ${days.length} Days",
                             style: Theme.of(context).textTheme.titleLarge,
                           ),
                         ],
