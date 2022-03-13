@@ -23,7 +23,6 @@ class PmdStateProvider extends ChangeNotifier {
     _timer?.cancel();
     _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       if (remaining == 0) {
-        _timer?.cancel();
         break_();
       }
       remaining = remaining - 1;
@@ -40,9 +39,9 @@ class PmdStateProvider extends ChangeNotifier {
     _timer?.cancel();
     _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       if (remaining == 0) {
-        _timer?.cancel();
         focus();
       }
+
       remaining = remaining - 1;
       notifyListeners();
     });
@@ -59,7 +58,7 @@ class PmdStateProvider extends ChangeNotifier {
         ), (timer) {
       remaining = remaining - 1;
       if (remaining == 0) {
-        _timer?.cancel();
+        focusing ? break_() : play();
       }
       notifyListeners();
     });
