@@ -34,6 +34,6 @@ class RootPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const HomePage();
+    return const SafeArea(child: HomePage());
   }
 }
