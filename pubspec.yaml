@@ -74,6 +74,7 @@ flutter:
     - assets/buddy3.png
     - assets/buddy4.png
     - assets/tomato_red.png
+    - assets/tomato_black.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

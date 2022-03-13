@@ -114,10 +114,6 @@ class HomePageState extends State<HomePage> {
                                 ),
                               )
                               .toList(),
-                          /* children: List.filled( */
-                          /*   days.length, */
-                          /*   const Expanded(child: CircleAvatar()), */
-                          /* ), */
                         ),
                       ],
                     ),
@@ -132,24 +128,9 @@ class HomePageState extends State<HomePage> {
                       onTap: () => {
                         Navigator.of(context).push(
                           MaterialPageRoute(
-                            builder: (_) => InviteHomiesPage(),
+                            builder: (_) => const InviteHomiesPage(),
                           ),
                         )
-                        /* Navigator.of(context).push( */
-                        /*   MaterialPageRoute( */
-                        /*     builder: (_) => TimeSelectPage( */
-                        /*       callback: (p) { */
-                        /*         Navigator.of(context).push( */
-                        /*           MaterialPageRoute( */
-                        /*             builder: (context) => TimerPage( */
-                        /*               timerStateChangeNotifier: p, */
-                        /*             ), */
-                        /*           ), */
-                        /*         ); */
-                        /*       }, */
-                        /*     ), */
-                        /*   ), */
-                        /* ) */
                       },
                       child: Container(
                         padding: const EdgeInsets.all(
@@ -261,10 +242,15 @@ class HomePageState extends State<HomePage> {
                               ?.copyWith(fontSize: 22),
                         ),
                         const Spacer(),
-                        const Icon(
-                          Icons.apple,
-                          size: 30,
+                        Image.asset(
+                          "assets/tomato_black.png",
+                          height: 30,
+                          width: 30,
                         ),
+                        /* const Icon( */
+                        /*   Icons.apple, */
+                        /*   size: 30, */
+                        /* ), */
                       ],
                     ),
                   ),
