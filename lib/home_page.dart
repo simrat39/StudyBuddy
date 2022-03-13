@@ -12,6 +12,8 @@ class HomePage extends StatefulWidget {
 }
 
 class HomePageState extends State<HomePage> {
+  List<String> days = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"];
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -77,11 +79,11 @@ class HomePageState extends State<HomePage> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              "Today: Date",
+                              "Today: ${DateTime.now().toLocal()}",
                               style: Theme.of(context).textTheme.titleLarge,
                             ),
                             Text(
-                              "Your Study Streak: 3 Days",
+                              "Your Study Streak: 7 Days",
                               style: Theme.of(context).textTheme.titleLarge,
                             ),
                           ],
@@ -94,10 +96,19 @@ class HomePageState extends State<HomePage> {
                           height: 10.0,
                         ),
                         Row(
-                          children: List.filled(
-                            7,
-                            const Expanded(child: CircleAvatar()),
-                          ),
+                          children: days
+                              .map(
+                                (e) => Expanded(
+                                  child: CircleAvatar(
+                                    child: Text(e),
+                                  ),
+                                ),
+                              )
+                              .toList(),
+                          /* children: List.filled( */
+                          /*   days.length, */
+                          /*   const Expanded(child: CircleAvatar()), */
+                          /* ), */
                         ),
                       ],
                     ),
