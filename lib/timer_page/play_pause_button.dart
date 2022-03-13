@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:study_app/main.dart';
 import 'package:study_app/providers/timer_state_provider.dart';
 
 class PlayPauseButton extends ConsumerStatefulWidget {
-  const PlayPauseButton({Key? key}) : super(key: key);
+  const PlayPauseButton({
+    Key? key,
+    required this.timerStateNotifier,
+  }) : super(key: key);
+
+  final ChangeNotifierProvider<TimerStateProvider> timerStateNotifier;
 
   @override
   ConsumerState<PlayPauseButton> createState() => _PlayPauseButtonState();
@@ -34,7 +38,7 @@ class _PlayPauseButtonState extends ConsumerState<PlayPauseButton>
 
   @override
   Widget build(BuildContext context) {
-    var timerStatus = ref.watch(timerStateNotifier);
+    var timerStatus = ref.watch(widget.timerStateNotifier);
 
     return Material(
       color: Colors.transparent,

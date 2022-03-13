@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:study_app/time_select/time_select_page.dart';
 import 'package:study_app/timer_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -107,7 +108,17 @@ class HomePageState extends State<HomePage> {
                     onTap: () => {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (_) => const TimerPage(),
+                          builder: (_) => TimeSelectPage(
+                            callback: (p) {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (context) => TimerPage(
+                                    timerStateChangeNotifier: p,
+                                  ),
+                                ),
+                              );
+                            },
+                          ),
                         ),
                       )
                     },
@@ -129,9 +140,10 @@ class HomePageState extends State<HomePage> {
                           ),
                           Row(
                             children: [
-                              Text("Invite Friends",
-                                  style:
-                                      Theme.of(context).textTheme.titleLarge),
+                              Text(
+                                "Invite Friends",
+                                style: Theme.of(context).textTheme.titleLarge,
+                              ),
                               const Spacer(),
                               Row(
                                 children: const [

@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:study_app/main.dart';
+import 'package:study_app/providers/timer_state_provider.dart';
 
 class TimerText extends ConsumerStatefulWidget {
   const TimerText({
     Key? key,
     required this.initial,
+    required this.timerStateNotifier,
   }) : super(key: key);
 
   final Duration initial;
+  final ChangeNotifierProvider<TimerStateProvider> timerStateNotifier;
 
   @override
   ConsumerState<TimerText> createState() => _TimerTextState();
@@ -32,7 +34,7 @@ class _TimerTextState extends ConsumerState<TimerText> {
 
   @override
   Widget build(BuildContext context) {
-    var provider = ref.watch(timerStateNotifier);
+    var provider = ref.watch(widget.timerStateNotifier);
     return Text(
       secondsToHumanReadable(provider.remaining!),
       style: Theme.of(context).textTheme.titleLarge?.copyWith(

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:study_app/done_page/done_page.dart';
+import 'package:study_app/providers/timer_state_provider.dart';
 import 'package:study_app/timer_page/buddy_row.dart';
 import 'package:study_app/timer_page/done_button.dart';
 import 'package:study_app/timer_page/play_pause_button.dart';
@@ -7,7 +9,10 @@ import 'package:study_app/timer_page/quit_button.dart';
 import 'package:study_app/timer_page/timer.dart';
 
 class TimerPage extends StatefulWidget {
-  const TimerPage({Key? key}) : super(key: key);
+  const TimerPage({Key? key, required this.timerStateChangeNotifier})
+      : super(key: key);
+
+  final ChangeNotifierProvider<TimerStateProvider> timerStateChangeNotifier;
 
   @override
   State<StatefulWidget> createState() {
@@ -61,12 +66,13 @@ class TimerPageState extends State<TimerPage> {
               const SizedBox(
                 height: 80,
               ),
-              const TimerText(
-                initial: Duration(
+              TimerText(
+                initial: const Duration(
                   hours: 1,
                   minutes: 20,
                   seconds: 42,
                 ),
+                timerStateNotifier: widget.timerStateChangeNotifier,
               ),
               const SizedBox(
                 height: 80,
@@ -109,7 +115,9 @@ class TimerPageState extends State<TimerPage> {
                       ),
                     );
                   }),
-                  const PlayPauseButton(),
+                  PlayPauseButton(
+                    timerStateNotifier: widget.timerStateChangeNotifier,
+                  ),
                   QuitButton(
                     onTap: () {
                       showDialog(
