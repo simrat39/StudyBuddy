@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 class QuitButton extends StatelessWidget {
   const QuitButton({
     Key? key,
+    required this.onTap,
   }) : super(key: key);
+
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -11,9 +14,7 @@ class QuitButton extends StatelessWidget {
       type: MaterialType.transparency,
       child: InkWell(
         borderRadius: BorderRadius.circular(100),
-        onTap: () {
-          print("bruh");
-        },
+        onTap: onTap,
         child: Container(
           padding: const EdgeInsets.all(10),
           decoration: BoxDecoration(

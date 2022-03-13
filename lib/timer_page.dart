@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:study_app/done_page/done_page.dart';
 import 'package:study_app/timer_page/buddy_row.dart';
 import 'package:study_app/timer_page/done_button.dart';
 import 'package:study_app/timer_page/play_pause_button.dart';
@@ -100,10 +101,44 @@ class TimerPageState extends State<TimerPage> {
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: const [
-                  DoneButton(),
-                  PlayPauseButton(),
-                  QuitButton(),
+                children: [
+                  DoneButton(onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const DonePage(),
+                      ),
+                    );
+                  }),
+                  const PlayPauseButton(),
+                  QuitButton(
+                    onTap: () {
+                      showDialog(
+                        context: context,
+                        builder: (context) => ClipRRect(
+                          borderRadius: BorderRadius.circular(14),
+                          child: AlertDialog(
+                            backgroundColor: Colors.white,
+                            title: const Text("Its sad to see you go!"),
+                            actions: [
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.of(context).pop();
+                                },
+                                child: const Text("Close"),
+                              ),
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.of(context).pop();
+                                  Navigator.of(context).pop();
+                                },
+                                child: const Text("Exit"),
+                              ),
+                            ],
+                          ),
+                        ),
+                      );
+                    },
+                  ),
                 ],
               )
             ],
