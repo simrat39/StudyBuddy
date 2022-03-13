@@ -21,7 +21,7 @@ class _TimeSelectPageState extends State<TimeSelectPage> {
   void initState() {
     super.initState();
 
-    _controller = TextEditingController(text: "8200");
+    _controller = TextEditingController(text: "120");
   }
 
   @override
@@ -55,8 +55,10 @@ class _TimeSelectPageState extends State<TimeSelectPage> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Text("Set timer for: ",
-                            style: Theme.of(context).textTheme.titleLarge),
+                        Text(
+                          "Set timer for: ",
+                          style: Theme.of(context).textTheme.titleLarge,
+                        ),
                         TextField(
                           controller: _controller,
                         ),
@@ -67,11 +69,11 @@ class _TimeSelectPageState extends State<TimeSelectPage> {
                             child: InkWell(
                               borderRadius: BorderRadius.circular(12),
                               onTap: () {
-                                int seconds = int.parse(_controller.value.text);
+                                int minutes = int.parse(_controller.value.text);
                                 ChangeNotifierProvider<TimerStateProvider>
                                     provider = ChangeNotifierProvider(
                                   (_) => TimerStateProvider(
-                                    duration: Duration(seconds: seconds),
+                                    duration: Duration(minutes: minutes),
                                   ),
                                 );
                                 widget.callback(provider);
