@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:study_app/invite_homies/invite_homies_page.dart';
 import 'package:study_app/time_select/time_select_page.dart';
 import 'package:study_app/timer_page.dart';
 
@@ -125,19 +126,24 @@ class HomePageState extends State<HomePage> {
                       onTap: () => {
                         Navigator.of(context).push(
                           MaterialPageRoute(
-                            builder: (_) => TimeSelectPage(
-                              callback: (p) {
-                                Navigator.of(context).push(
-                                  MaterialPageRoute(
-                                    builder: (context) => TimerPage(
-                                      timerStateChangeNotifier: p,
-                                    ),
-                                  ),
-                                );
-                              },
-                            ),
+                            builder: (_) => InviteHomiesPage(),
                           ),
                         )
+                        /* Navigator.of(context).push( */
+                        /*   MaterialPageRoute( */
+                        /*     builder: (_) => TimeSelectPage( */
+                        /*       callback: (p) { */
+                        /*         Navigator.of(context).push( */
+                        /*           MaterialPageRoute( */
+                        /*             builder: (context) => TimerPage( */
+                        /*               timerStateChangeNotifier: p, */
+                        /*             ), */
+                        /*           ), */
+                        /*         ); */
+                        /*       }, */
+                        /*     ), */
+                        /*   ), */
+                        /* ) */
                       },
                       child: Container(
                         padding: const EdgeInsets.all(
