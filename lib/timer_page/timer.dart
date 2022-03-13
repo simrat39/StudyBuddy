@@ -39,8 +39,9 @@ class _TimerTextState extends ConsumerState<TimerText> {
       secondsToHumanReadable(provider.remaining!),
       style: Theme.of(context).textTheme.titleLarge?.copyWith(
             fontWeight: FontWeight.w700,
-            fontSize: 80,
+            fontSize: 70,
           ),
+      maxLines: 1,
     );
   }
 }
