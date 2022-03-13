@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:study_app/invite_homies/invite_homies_page.dart';
+import 'package:study_app/pmd_page/pmd_page.dart';
 import 'package:study_app/pmd_select/pmd_select_page.dart';
 import 'package:study_app/time_select/time_select_page.dart';
 import 'package:study_app/timer_page.dart';
@@ -239,13 +240,13 @@ class HomePageState extends State<HomePage> {
                           MaterialPageRoute(
                             builder: (_) => PmdSelectPage(
                               callback: (p) {
-                                /* Navigator.of(context).push( */
-                                /*   MaterialPageRoute( */
-                                /*     builder: (context) => PmdSelectPage( */
-                                /*       timerStateChangeNotifier: p, */
-                                /*     ), */
-                                /*   ), */
-                                /* ); */
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) => PmdPage(
+                                      pmdStateChangeNotifier: p,
+                                    ),
+                                  ),
+                                );
                               },
                             ),
                           ),

@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:study_app/models/pmd_data.dart';
-import 'package:study_app/providers/timer_state_provider.dart';
+import 'package:study_app/providers/pmd_state_provider.dart';
 
 class PmdSelectPage extends StatefulWidget {
   const PmdSelectPage({
@@ -10,7 +10,7 @@ class PmdSelectPage extends StatefulWidget {
     required this.callback,
   }) : super(key: key);
 
-  final Function(ChangeNotifierProvider<TimerStateProvider>) callback;
+  final Function(ChangeNotifierProvider<PmdStateProvider>) callback;
 
   @override
   State<PmdSelectPage> createState() => _PmdSelectPageState();
@@ -164,15 +164,13 @@ class _PmdSelectPageState extends State<PmdSelectPage> {
                                 child: InkWell(
                                   borderRadius: BorderRadius.circular(12),
                                   onTap: () {
-                                    /* int minutes = */
-                                    /*     int.parse(_controller.value.text); */
-                                    /* ChangeNotifierProvider<TimerStateProvider> */
-                                    /*     provider = ChangeNotifierProvider( */
-                                    /*   (_) => TimerStateProvider( */
-                                    /*     duration: Duration(minutes: minutes), */
-                                    /*   ), */
-                                    /* ); */
-                                    /* widget.callback(provider); */
+                                    ChangeNotifierProvider<PmdStateProvider>
+                                        provider = ChangeNotifierProvider(
+                                      (_) => PmdStateProvider(
+                                        pmdData: _data,
+                                      ),
+                                    );
+                                    widget.callback(provider);
                                   },
                                   child: Container(
                                     padding: const EdgeInsets.symmetric(
