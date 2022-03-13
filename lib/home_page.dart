@@ -215,9 +215,10 @@ class HomePageState extends State<HomePage> {
                                   ?.copyWith(fontSize: 22),
                             ),
                             const Spacer(),
-                            const Icon(
-                              Icons.timer,
-                              size: 30,
+                            Image.asset(
+                              "assets/hourglass.png",
+                              height: 30,
+                              width: 30,
                             ),
                           ],
                         ),
@@ -247,10 +248,6 @@ class HomePageState extends State<HomePage> {
                           height: 30,
                           width: 30,
                         ),
-                        /* const Icon( */
-                        /*   Icons.apple, */
-                        /*   size: 30, */
-                        /* ), */
                       ],
                     ),
                   ),
