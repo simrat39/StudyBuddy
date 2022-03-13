@@ -60,7 +60,19 @@ class _InviteHomiesPageState extends State<InviteHomiesPage> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               IconButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(
+                                      backgroundColor: Colors.white,
+                                      content: Text(
+                                        "Invite Copied!",
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .labelMedium,
+                                      ),
+                                    ),
+                                  );
+                                },
                                 icon: const Icon(
                                   Icons.copy,
                                   size: 36,
