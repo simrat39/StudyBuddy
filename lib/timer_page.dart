@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:study_app/timer_page/done_button.dart';
+import 'package:study_app/timer_page/play_pause_button.dart';
+import 'package:study_app/timer_page/quit_button.dart';
+import 'package:study_app/timer_page/timer.dart';
 
 class TimerPage extends StatefulWidget {
   const TimerPage({Key? key}) : super(key: key);
@@ -55,12 +59,12 @@ class TimerPageState extends State<TimerPage> {
               const SizedBox(
                 height: 80,
               ),
-              Text(
-                "10:10:10",
-                style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                      fontWeight: FontWeight.w700,
-                      fontSize: 80,
-                    ),
+              const TimerText(
+                initial: Duration(
+                  hours: 1,
+                  minutes: 20,
+                  seconds: 42,
+                ),
               ),
               const SizedBox(
                 height: 80,
@@ -91,52 +95,10 @@ class TimerPageState extends State<TimerPage> {
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Container(
-                    padding: const EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(100),
-                      border: Border.all(
-                        width: 2,
-                        color: Colors.green,
-                      ),
-                    ),
-                    child: const Icon(
-                      Icons.check,
-                      color: Colors.green,
-                      size: 40,
-                    ),
-                  ),
-                  Container(
-                    padding: const EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(100),
-                      border: Border.all(
-                        width: 2,
-                        color: Colors.orange,
-                      ),
-                    ),
-                    child: const Icon(
-                      Icons.pause,
-                      color: Colors.orange,
-                      size: 80,
-                    ),
-                  ),
-                  Container(
-                    padding: const EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(100),
-                      border: Border.all(
-                        width: 2,
-                        color: Colors.red,
-                      ),
-                    ),
-                    child: const Icon(
-                      Icons.exit_to_app,
-                      color: Colors.red,
-                      size: 40,
-                    ),
-                  ),
+                children: const [
+                  DoneButton(),
+                  PlayPauseButton(),
+                  QuitButton(),
                 ],
               )
             ],
