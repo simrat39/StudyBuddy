@@ -56,11 +56,17 @@ class _TimeSelectPageState extends State<TimeSelectPage> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Text(
-                          "Set timer for: ",
+                          "Set timer for (minutes): ",
                           style: Theme.of(context).textTheme.titleLarge,
                         ),
                         TextField(
                           controller: _controller,
+                          style: Theme.of(context).textTheme.titleMedium,
+                          decoration: const InputDecoration(
+                            focusedBorder: OutlineInputBorder(),
+                            enabledBorder: OutlineInputBorder(),
+                            hintText: 'Minutes',
+                          ),
                         ),
                         Material(
                           type: MaterialType.transparency,
