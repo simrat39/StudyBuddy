@@ -33,8 +33,9 @@ class DonePage extends StatelessWidget {
                     child: InkWell(
                       borderRadius: BorderRadius.circular(12),
                       onTap: () {
-                        Navigator.of(context).pop();
-                        Navigator.of(context).pop();
+                        Navigator.of(context).popUntil(
+                          (route) => route.isFirst,
+                        );
                       },
                       child: Container(
                         padding: const EdgeInsets.symmetric(
