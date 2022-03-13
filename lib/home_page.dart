@@ -98,55 +98,60 @@ class HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-              InkWell(
-                onTap: () => {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (_) => const TimerPage(),
-                    ),
-                  )
-                },
+              Material(
+                type: MaterialType.transparency,
                 child: Card(
                   color: const Color(0xff8A93E9),
-                  child: Container(
-                    padding: const EdgeInsets.all(
-                      20.0,
-                    ),
-                    child: Column(
-                      children: [
-                        Text(
-                          "Begin a group study session",
-                          style: Theme.of(context)
-                              .textTheme
-                              .titleLarge
-                              ?.copyWith(fontSize: 30),
+                  child: InkWell(
+                    borderRadius: BorderRadius.circular(12),
+                    onTap: () => {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (_) => const TimerPage(),
                         ),
-                        const SizedBox(
-                          height: 40.0,
-                        ),
-                        Row(
-                          children: [
-                            Text("Invite Friends",
-                                style: Theme.of(context).textTheme.titleLarge),
-                            const Spacer(),
-                            Row(
-                              children: const [
-                                Icon(
-                                  Icons.message,
-                                  size: 30,
-                                ),
-                                SizedBox(
-                                  width: 12,
-                                ),
-                                Icon(
-                                  Icons.mail,
-                                  size: 30,
-                                )
-                              ],
-                            )
-                          ],
-                        ),
-                      ],
+                      )
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.all(
+                        20.0,
+                      ),
+                      child: Column(
+                        children: [
+                          Text(
+                            "Begin a group study session",
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleLarge
+                                ?.copyWith(fontSize: 30),
+                          ),
+                          const SizedBox(
+                            height: 40.0,
+                          ),
+                          Row(
+                            children: [
+                              Text("Invite Friends",
+                                  style:
+                                      Theme.of(context).textTheme.titleLarge),
+                              const Spacer(),
+                              Row(
+                                children: const [
+                                  Icon(
+                                    Icons.message,
+                                    size: 30,
+                                  ),
+                                  SizedBox(
+                                    width: 12,
+                                  ),
+                                  Icon(
+                                    Icons.mail,
+                                    size: 30,
+                                  )
+                                ],
+                              )
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
