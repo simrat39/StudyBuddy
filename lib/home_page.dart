@@ -63,13 +63,18 @@ class HomePageState extends State<HomePage> {
                       ],
                     ),
                   ),
-                  CircleAvatar(
-                    radius: 30,
-                    backgroundColor: const Color(0xffBDDBEC),
-                    child: Image.asset(
-                      "assets/tomato_red.png",
-                      width: 36,
-                      height: 36,
+                  PhysicalModel(
+                    color: Colors.grey,
+                    shape: BoxShape.circle,
+                    elevation: 4,
+                    child: CircleAvatar(
+                      radius: 30,
+                      backgroundColor: const Color(0xffBDDBEC),
+                      child: Image.asset(
+                        "assets/tomato_red.png",
+                        width: 36,
+                        height: 36,
+                      ),
                     ),
                   ),
                 ],
