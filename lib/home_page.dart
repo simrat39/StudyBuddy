@@ -15,6 +15,12 @@ class HomePage extends StatefulWidget {
 class HomePageState extends State<HomePage> {
   List<String> days = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"];
 
+  static String dateTimetoHumanReadable(DateTime dt) {
+    String dateSlug =
+        "${dt.year.toString()}-${dt.month.toString().padLeft(2, '0')}-${dt.day.toString().padLeft(2, '0')}";
+    return dateSlug;
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -82,7 +88,7 @@ class HomePageState extends State<HomePage> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              "Today: ${DateTime.now().toLocal()}",
+                              "Today: ${dateTimetoHumanReadable(DateTime.now())}",
                               style: Theme.of(context).textTheme.titleLarge,
                             ),
                             Text(
