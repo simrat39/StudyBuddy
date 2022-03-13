@@ -6,16 +6,6 @@ void main() {
   runApp(const ProviderScope(child: MyApp()));
 }
 
-/* var timerStateNotifier = ChangeNotifierProvider((_) { */
-/*   return TimerStateProvider( */
-/*     duration: const Duration( */
-/*       hours: 1, */
-/*       minutes: 40, */
-/*       seconds: 20, */
-/*     ), */
-/*   ); */
-/* }); */
-
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -23,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Study Buddy',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: 'RedHatDisplay').copyWith(
         scaffoldBackgroundColor: const Color(0xffF8F8FF),

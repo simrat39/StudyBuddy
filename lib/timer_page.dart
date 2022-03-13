@@ -136,8 +136,9 @@ class TimerPageState extends State<TimerPage> {
                               ),
                               TextButton(
                                 onPressed: () {
-                                  Navigator.of(context).pop();
-                                  Navigator.of(context).pop();
+                                  Navigator.of(context).popUntil(
+                                    (route) => route.isFirst,
+                                  );
                                 },
                                 child: const Text("Exit"),
                               ),
