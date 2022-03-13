@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:study_app/timer_page/buddy_row.dart';
 import 'package:study_app/timer_page/done_button.dart';
 import 'package:study_app/timer_page/play_pause_button.dart';
 import 'package:study_app/timer_page/quit_button.dart';
@@ -90,6 +91,10 @@ class TimerPageState extends State<TimerPage> {
                   ),
                 ),
               ),
+              const SizedBox(
+                height: 15,
+              ),
+              const BuddyRow(),
               const SizedBox(
                 height: 80,
               ),
