@@ -4,7 +4,7 @@
 
 A beautiful app focused on helping you getting your work done.
 
-![banner](./banner.png)
+![banner](https://github.com/simrat39/StudyBuddy/blob/main/banner.png?raw=true)
 
 ## Features 
 - Streak Count
